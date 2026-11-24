@@ -19,6 +19,14 @@ class MaterialTests(unittest.TestCase):
                 self.assertEqual(set(rows[0]), set(rows[-1]))
                 self.assertTrue(all(any(value.strip() for value in row.values()) for row in rows))
 
+    def test_scenario_materials_have_resolvable_business_references(self):
+        works = read_table(ROOT / "data/works.csv")
+        rotations = read_table(ROOT / "data/rotation_windows.csv")
+        environment = read_table(ROOT / "data/environment.csv")
+        self.assertTrue({row["work_id"] for row in rotations} <= {row["work_id"] for row in works})
+        self.assertTrue(any(row["device_state"] == "offline" and not row["lux_hours"] for row in environment))
+        self.assertTrue(all(int(row["max_display_days"]) > 0 for row in works))
+
     def test_dates_and_identifiers_remain_strings(self):
         for path in (ROOT / 'data').glob('*.csv'):
             rows = read_table(path)
