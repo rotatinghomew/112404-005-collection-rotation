@@ -1,0 +1,4 @@
+reading_id,gallery_id,observed_at,lux_hours,device_state,calibration_date,source
+E-1,G-A,2027-02-01T08:00,0.4,online,2027-01-15,logger-1
+E-2,G-A,2027-02-02T08:00,,offline,2027-01-15,logger-1
+E-3,G-B,2027-02-02T08:00,0.7,online,2026-10-01,logger-2

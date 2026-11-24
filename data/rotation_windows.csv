@@ -1,0 +1,4 @@
+work_id,gallery_id,install_date,open_date,close_date,remove_date,state
+W-1,G-A,2027-02-20,2027-02-25,2027-03-12,2027-03-15,planned
+W-2,G-A,2027-03-10,2027-03-15,2027-04-05,2027-04-08,hold
+W-3,G-B,2027-03-01,2027-03-05,2027-04-10,2027-04-13,planned
